@@ -1,73 +1,132 @@
-## 01 - Why Spark
+# PySpark Beginner Course Outline
 
-1. Working in a notebook
-2. Why does spark exist
-3. Spark exection model
-4. lazy evaluation explained
-5. **Exercise**: Quick question about which operation triggers exection
+## Course outcome
 
-## 02 - Intro to DataFrames
+After 165 minutes of guided learning, students can build a small Fabric batch pipeline that reads Lakehouse files, validates and transforms data, joins related datasets, aggregates a business result, and writes a managed Delta table.
 
-1. What is a dataframe
-2. Creating a small standalone dataframe
-3. How to preview with show()
-4. How to inspect the schema of a dataframe
-5. How to Select columns to return from a dataframe
-6. **Exercise**: Do a select from a larger DF using only 2 columns and preview it
+The notebooks are self-contained so they also work as later reference material.
 
-## 03 - Filtering and creating columns
+## 01 - Why Spark and Working in Fabric (10 minutes)
 
+- Run cells in a Fabric notebook
+- Driver, executors, tasks, and partitions
+- Transformations, actions, and lazy evaluation
+- Shuffles, caching, lineage, and safe use of `collect()`
+- **Exercise:** identify the execution trigger and risky data movement
 
-1. Refer to columns using col()
-2. Using filter() with operands
-3. **Exercise**: Using operands or and Not
-4. Using withColumn to calculate a new column
-5. **Exercise**: Adding a new calculated column
+## 02 - DataFrames and Schemas (14 minutes)
 
-## 04 - Conditional columns
+- Create a DataFrame with a DDL schema string
+- Preview with `show()`
+- Inspect with `printSchema()`, `columns`, and `dtypes`
+- Select and alias columns
+- DataFrame immutability
+- **Exercise:** build a renamed product-price projection
 
-1. Using when() and otherwise()
-2. **Exercise**: creating dataframes with conditional columns using when and otherwise()
+## 03 - Data Types, Casting, and Bad Records (16 minutes)
 
-## 05 - Missing Data and Fallback Values
+- Common scalar Spark types
+- Fixed-precision decimals for currency
+- `cast` for trusted input
+- `try_cast` for uncertain input
+- Preserve raw values and flag conversion failures
+- Schema-on-read versus cleanup after read
+- **Exercise:** type and validate a raw product extract
 
-1. Identify missing values with isNull and isNotNull
-2. Using Coalesce()
-3. Using filna()
-4. Using dropna()
+## 04 - Filtering and Creating Columns (20 minutes)
 
-## 06 - GroupBy and aggregations
+- `F.col` and `F.lit`
+- `filter`, `isin`, and parenthesised boolean expressions
+- Calculated columns with `withColumn`
+- Conditional columns with `when` / `otherwise`
+- `select`, `withColumnRenamed`, `drop`, and `orderBy`
+- **Exercise:** create a sorted high-value order report
 
-1. single aggregation using count()
-2. single aggregation using sum()
-3. Multiple aggregations using agg()
-4. Grouping by more than one column
-5. **Execersie**: Creating aggregates
+## 05 - Missing and Duplicate Data (15 minutes)
 
-## 07 - joining dataframes
+- Null versus blank text
+- Basic text standardisation with `trim`
+- `isNull` and `isNotNull`
+- `coalesce`, `fillna`, and `dropna`
+- Exact duplicates and the limits of `dropDuplicates(keys)`
+- A simple data-quality count
+- **Exercise:** build a repeatable customer-cleaning pipeline
 
-1. Inner joins
-2. Left joins
-3. **Execersie**: Answering a business question
+## 06 - Grouping and Aggregations (18 minutes)
 
-## 08 - Read and Write data
+- Input and output grain
+- `groupBy` and `agg`
+- `sum`, `avg`, `min`, `max`, and `countDistinct`
+- `count('*')` versus `count(column)`
+- Multiple grouping keys and sorted results
+- Temporary views and an equivalent Spark SQL query
+- **Exercise:** create a category performance summary
 
-1. Read CSV files using an explicit schema
-2. Inspect a DataFrame schema after reading data
-3. Write and read managed Delta tables
-4. **Exercise**: Read and write a customer table
+## 07 - Joining and Combining DataFrames (22 minutes)
 
-## 09 - Dates and Timestamps
+- Inner and left joins
+- DataFrame aliases and qualified columns
+- Join cardinality and row-count validation
+- Right, full, semi, and anti join reference
+- Find unmatched records with a left-anti join
+- Append compatible rows with `unionByName`
+- **Exercise:** retain every order while assigning customers and account managers
 
-1. Parse date and timestamp strings using explicit formats
-2. Format dates and extract calendar fields
-3. Calculate date differences and add time to timestamps
-4. Convert UTC timestamps to a named local time zone
-5. **Exercise**: Parse delivery data and create calendar features
+## 08 - Dates and Timestamps (15 minutes)
 
-## 10 - Spark Data Types and Casting
+- Parse with explicit formats and `try_to_timestamp`
+- Detect invalid dates and timestamps
+- Extract year, month, day, and day of year
+- `date_format` for display labels
+- `datediff`, `date_add`, and timestamp intervals
+- Named time-zone conversion
+- **Exercise:** parse day-first delivery data and create calendar fields
 
-1. Inspect schemas and identify common Spark data types
-2. Cast string values to numeric, decimal, boolean, date, and timestamp types
-3. Use safe casts and identify failed conversions with null values
-5. **Exercise**: Clean a raw product extract into an analysis-ready DataFrame
+## 09 - Reading and Writing in Microsoft Fabric (20 minutes)
+
+- Attach a default Lakehouse
+- Use `Files/pyspark_training` paths
+- Read CSV with an explicit schema
+- Path-based Delta data versus managed Delta tables
+- `overwrite`, `append`, `error`, and `ignore` modes
+- `save`, `saveAsTable`, `load`, and `spark.table`
+- **Exercise:** create and verify `retail_customers`
+
+## 10 - Window Functions and Pipeline Recap (15 minutes)
+
+- `Window.partitionBy` and `orderBy`
+- `row_number` within a business key
+- Deterministic latest-record selection
+- End-to-end afternoon pipeline checklist
+- **Exercise:** choose the latest product price
+
+## Function-to-notebook index
+
+| Need | Main APIs | Notebook |
+|---|---|---:|
+| Inspect data | `show`, `printSchema`, `columns`, `dtypes` | 02 |
+| Choose columns | `select`, `alias` | 02, 04 |
+| Convert types | `cast`, `try_cast` | 03 |
+| Filter rows | `filter`, `isin`, `isNull` | 04, 05 |
+| Create or remove columns | `withColumn`, `F.lit`, `drop`, `withColumnRenamed` | 04 |
+| Apply business conditions | `when`, `otherwise` | 04 |
+| Handle missing data | `coalesce`, `fillna`, `dropna` | 05 |
+| Clean text and duplicates | `trim`, `dropDuplicates` | 05 |
+| Summarise groups | `groupBy`, `agg`, aggregate functions | 06 |
+| Use Spark SQL | `createOrReplaceTempView`, `spark.sql` | 06 |
+| Combine datasets | `join`, `unionByName` | 07 |
+| Work with dates | `try_to_timestamp`, date functions, time zones | 08 |
+| Read and write Lakehouse data | `spark.read`, `save`, `saveAsTable`, `spark.table` | 09 |
+| Choose a latest record | `Window`, `row_number` | 10 |
+
+## Optional topics if time permits
+
+1. Delta `MERGE`, schema evolution, and table history
+2. `rank`, `lag`, `lead`, and running window calculations
+3. Broadcast joins, partition control, caching, data skew, and Spark UI
+4. Nested JSON, arrays, structs, `from_json`, and `explode`
+5. Regex and deeper string standardisation
+6. Structured Streaming and incremental ingestion
+7. Transformation tests, data-quality expectations, parameters, and orchestration
+
+RDDs, MLlib, custom UDF development, streaming implementation, and advanced cluster tuning are outside the mandatory beginner path.
