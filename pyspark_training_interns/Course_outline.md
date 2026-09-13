@@ -51,3 +51,23 @@
 3. **Execersie**: Answering a business question
 
 ## 08 - Read and Write data
+
+1. Read CSV files using an explicit schema
+2. Inspect a DataFrame schema after reading data
+3. Write and read managed Delta tables
+4. **Exercise**: Read and write a customer table
+
+## 09 - Dates and Timestamps
+
+1. Parse date and timestamp strings using explicit formats
+2. Format dates and extract calendar fields
+3. Calculate date differences and add time to timestamps
+4. Convert UTC timestamps to a named local time zone
+5. **Exercise**: Parse delivery data and create calendar features
+
+## 10 - Spark Data Types and Casting
+
+1. Inspect schemas and identify common Spark data types
+2. Cast string values to numeric, decimal, boolean, date, and timestamp types
+3. Use safe casts and identify failed conversions with null values
+5. **Exercise**: Clean a raw product extract into an analysis-ready DataFrame
