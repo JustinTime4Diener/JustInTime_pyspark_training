@@ -25,8 +25,8 @@ Fabric supplies the `spark` session. The student notebooks do not stop or replac
 |---:|---|---:|
 | 01 | Why Spark and Working in Fabric | 10 |
 | 02 | DataFrames and Schemas | 14 |
-| 03 | Data Types, Casting, and Bad Records | 16 |
-| 04 | Filtering and Creating Columns | 20 |
+| 03 | Filtering and Creating Columns | 20 |
+| 04 | Data Types, Casting, and Bad Records | 16 |
 | 05 | Missing and Duplicate Data | 15 |
 | 06 | Grouping and Aggregations | 18 |
 | 07 | Joining and Combining DataFrames | 22 |

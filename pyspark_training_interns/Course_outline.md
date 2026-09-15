@@ -23,7 +23,16 @@ The notebooks are self-contained so they also work as later reference material.
 - DataFrame immutability
 - **Exercise:** build a renamed product-price projection
 
-## 03 - Data Types, Casting, and Bad Records (16 minutes)
+## 03 - Filtering and Creating Columns (20 minutes)
+
+- `F.col` and `F.lit`
+- `filter`, `isin`, and parenthesised boolean expressions
+- Calculated columns with `withColumn`
+- Conditional columns with `when` / `otherwise`
+- `select`, `withColumnRenamed`, `drop`, and `orderBy`
+- **Exercise:** create a sorted high-value order report
+
+## 04 - Data Types, Casting, and Bad Records (16 minutes)
 
 - Common scalar Spark types
 - Fixed-precision decimals for currency
@@ -32,15 +41,6 @@ The notebooks are self-contained so they also work as later reference material.
 - Preserve raw values and flag conversion failures
 - Schema-on-read versus cleanup after read
 - **Exercise:** type and validate a raw product extract
-
-## 04 - Filtering and Creating Columns (20 minutes)
-
-- `F.col` and `F.lit`
-- `filter`, `isin`, and parenthesised boolean expressions
-- Calculated columns with `withColumn`
-- Conditional columns with `when` / `otherwise`
-- `select`, `withColumnRenamed`, `drop`, and `orderBy`
-- **Exercise:** create a sorted high-value order report
 
 ## 05 - Missing and Duplicate Data (15 minutes)
 
@@ -105,11 +105,11 @@ The notebooks are self-contained so they also work as later reference material.
 | Need | Main APIs | Notebook |
 |---|---|---:|
 | Inspect data | `show`, `printSchema`, `columns`, `dtypes` | 02 |
-| Choose columns | `select`, `alias` | 02, 04 |
-| Convert types | `cast`, `try_cast` | 03 |
-| Filter rows | `filter`, `isin`, `isNull` | 04, 05 |
-| Create or remove columns | `withColumn`, `F.lit`, `drop`, `withColumnRenamed` | 04 |
-| Apply business conditions | `when`, `otherwise` | 04 |
+| Choose columns | `select`, `alias` | 02, 03 |
+| Convert types | `cast`, `try_cast` | 04 |
+| Filter rows | `filter`, `isin`, `isNull` | 03, 05 |
+| Create or remove columns | `withColumn`, `F.lit`, `drop`, `withColumnRenamed` | 03 |
+| Apply business conditions | `when`, `otherwise` | 03 |
 | Handle missing data | `coalesce`, `fillna`, `dropna` | 05 |
 | Clean text and duplicates | `trim`, `dropDuplicates` | 05 |
 | Summarise groups | `groupBy`, `agg`, aggregate functions | 06 |
