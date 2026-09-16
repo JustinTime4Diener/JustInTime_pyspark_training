@@ -1,4 +1,5 @@
 # PySpark Beginner Course Outline
+### Author: Justin Diener
 
 ## Course outcome
 
@@ -62,7 +63,7 @@ The notebooks are self-contained so they also work as later reference material.
 - Temporary views and an equivalent Spark SQL query
 - **Exercise:** create a category performance summary
 
-## 07 - Joining and Combining DataFrames (22 minutes)
+## 07 - Joining and Combining DataFrames (22 minutes) ✅
 
 - Inner and left joins
 - DataFrame aliases and qualified columns
@@ -72,7 +73,7 @@ The notebooks are self-contained so they also work as later reference material.
 - Append compatible rows with `unionByName`
 - **Exercise:** retain every order while assigning customers and account managers
 
-## 08 - Dates and Timestamps (15 minutes)
+## 08 - Dates and Timestamps (15 minutes) ✅
 
 - Parse with explicit formats and `try_to_timestamp`
 - Detect invalid dates and timestamps
@@ -82,7 +83,15 @@ The notebooks are self-contained so they also work as later reference material.
 - Named time-zone conversion
 - **Exercise:** parse day-first delivery data and create calendar fields
 
-## 09 - Reading and Writing in Microsoft Fabric (20 minutes)
+## 09 - Window Functions and Pipeline Recap (15 minutes)  ✅
+
+- `Window.partitionBy` and `orderBy`
+- `row_number` within a business key
+- Deterministic latest-record selection
+- End-to-end afternoon pipeline checklist
+- **Exercise:** choose the latest product price
+
+## 10 - Reading and Writing in Microsoft Fabric (20 minutes)
 
 - Attach a default Lakehouse
 - Use `Files/pyspark_training` paths
@@ -91,14 +100,6 @@ The notebooks are self-contained so they also work as later reference material.
 - `overwrite`, `append`, `error`, and `ignore` modes
 - `save`, `saveAsTable`, `load`, and `spark.table`
 - **Exercise:** create and verify `retail_customers`
-
-## 10 - Window Functions and Pipeline Recap (15 minutes)
-
-- `Window.partitionBy` and `orderBy`
-- `row_number` within a business key
-- Deterministic latest-record selection
-- End-to-end afternoon pipeline checklist
-- **Exercise:** choose the latest product price
 
 ## Function-to-notebook index
 
@@ -116,8 +117,8 @@ The notebooks are self-contained so they also work as later reference material.
 | Use Spark SQL | `createOrReplaceTempView`, `spark.sql` | 06 |
 | Combine datasets | `join`, `unionByName` | 07 |
 | Work with dates | `try_to_timestamp`, date functions, time zones | 08 |
-| Read and write Lakehouse data | `spark.read`, `save`, `saveAsTable`, `spark.table` | 09 |
-| Choose a latest record | `Window`, `row_number` | 10 |
+| Read and write Lakehouse data | `spark.read`, `save`, `saveAsTable`, `spark.table` | 10 |
+| Choose a latest record | `Window`, `row_number` | 09 |
 
 ## Optional topics if time permits
 

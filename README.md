@@ -31,8 +31,8 @@ Fabric supplies the `spark` session. The student notebooks do not stop or replac
 | 06 | Grouping and Aggregations | 18 |
 | 07 | Joining and Combining DataFrames | 22 |
 | 08 | Dates and Timestamps | 15 |
-| 09 | Reading and Writing in Microsoft Fabric | 20 |
-| 10 | Window Functions and Pipeline Recap | 15 |
+| 09 | Window Functions and Pipeline Recap | 15 |
+| 10 | Reading and Writing in Microsoft Fabric | 20 |
 
 The lessons total 165 minutes, leaving approximately 15 minutes for questions, Spark-session delays, and transitions.
 
