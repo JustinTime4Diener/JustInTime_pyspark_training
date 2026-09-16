@@ -42,7 +42,7 @@ The notebooks are self-contained so they also work as later reference material.
 - Schema-on-read versus cleanup after read
 - **Exercise:** type and validate a raw product extract
 
-## 05 - Missing and Duplicate Data (15 minutes)
+## 05 - Missing and Duplicate Data (15 minutes) ✅
 
 - Null versus blank text
 - Basic text standardisation with `trim`
@@ -52,7 +52,7 @@ The notebooks are self-contained so they also work as later reference material.
 - A simple data-quality count
 - **Exercise:** build a repeatable customer-cleaning pipeline
 
-## 06 - Grouping and Aggregations (18 minutes)
+## 06 - Grouping and Aggregations (18 minutes)  ✅
 
 - Input and output grain
 - `groupBy` and `agg`
