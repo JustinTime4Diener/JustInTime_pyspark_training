@@ -6,7 +6,7 @@ After 165 minutes of guided learning, students can build a small Fabric batch pi
 
 The notebooks are self-contained so they also work as later reference material.
 
-## 01 - Why Spark and Working in Fabric (10 minutes)
+## 01 - Why Spark and Working in Fabric (10 minutes)  ✅
 
 - Run cells in a Fabric notebook
 - Driver, executors, tasks, and partitions
@@ -14,7 +14,7 @@ The notebooks are self-contained so they also work as later reference material.
 - Shuffles, caching, lineage, and safe use of `collect()`
 - **Exercise:** identify the execution trigger and risky data movement
 
-## 02 - DataFrames and Schemas (14 minutes)
+## 02 - DataFrames and Schemas (14 minutes)  ✅
 
 - Create a DataFrame with a DDL schema string
 - Preview with `show()`
@@ -27,6 +27,7 @@ The notebooks are self-contained so they also work as later reference material.
 
 - `F.col` and `F.lit`
 - `filter`, `isin`, and parenthesised boolean expressions
+- **Exercise**: try filtering yourself
 - Calculated columns with `withColumn`
 - Conditional columns with `when` / `otherwise`
 - `select`, `withColumnRenamed`, `drop`, and `orderBy`
