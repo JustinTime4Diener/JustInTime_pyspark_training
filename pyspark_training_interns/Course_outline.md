@@ -23,7 +23,7 @@ The notebooks are self-contained so they also work as later reference material.
 - DataFrame immutability
 - **Exercise:** build a renamed product-price projection
 
-## 03 - Filtering and Creating Columns (20 minutes)
+## 03 - Filtering and Creating Columns (20 minutes) ✅
 
 - `F.col` and `F.lit`
 - `filter`, `isin`, and parenthesised boolean expressions
@@ -33,10 +33,9 @@ The notebooks are self-contained so they also work as later reference material.
 - `select`, `withColumnRenamed`, `drop`, and `orderBy`
 - **Exercise:** create a sorted high-value order report
 
-## 04 - Data Types, Casting, and Bad Records (16 minutes)
+## 04 - Data Types, Casting, and Bad Records (16 minutes) ✅
 
-- Common scalar Spark types
-- Fixed-precision decimals for currency
+- Common scalar Spark types (i.e. one atomic value)
 - `cast` for trusted input
 - `try_cast` for uncertain input
 - Preserve raw values and flag conversion failures
