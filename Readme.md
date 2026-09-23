@@ -117,15 +117,3 @@ To teach the basics of pyspark and is covered in 10 notebooks each standalone.  
 | Work with dates | `try_to_timestamp`, date functions, time zones | 08 |
 | Read and write Lakehouse data | `spark.read`, `save`, `saveAsTable`, `spark.table` | 10 |
 | Choose a latest record | `Window`, `row_number` | 09 |
-
-## Optional topics if time permits
-
-1. Delta `MERGE`, schema evolution, and table history
-2. `rank`, `lag`, `lead`, and running window calculations
-3. Broadcast joins, partition control, caching, data skew, and Spark UI
-4. Nested JSON, arrays, structs, `from_json`, and `explode`
-5. Regex and deeper string standardisation
-6. Structured Streaming and incremental ingestion
-7. Transformation tests, data-quality expectations, parameters, and orchestration
-
-RDDs, MLlib, custom UDF development, streaming implementation, and advanced cluster tuning are outside the mandatory beginner path.
