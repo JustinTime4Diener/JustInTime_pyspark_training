@@ -3,11 +3,9 @@
 
 ## Course outcome
 
-After 165 minutes of guided learning, students can build a small Fabric batch pipeline that reads Lakehouse files, validates and transforms data, joins related datasets, aggregates a business result, and writes a managed Delta table.
+To teach the basics of pyspark and is covered in 10 notebooks each standalone.  Notebook 10 requires Fabric or similar with the NYC yellow taxi sample dataset.  Hope you enjoy.
 
-The notebooks are self-contained so they also work as later reference material.
-
-## 01 - Why Spark and Working in Fabric (10 minutes)  ✅
+## 01 - Why Spark and Working in Fabric
 
 - Run cells in a Fabric notebook
 - Driver, executors, tasks, and partitions
@@ -15,7 +13,7 @@ The notebooks are self-contained so they also work as later reference material.
 - Shuffles, caching, lineage, and safe use of `collect()`
 - **Exercise:** identify the execution trigger and risky data movement
 
-## 02 - DataFrames and Schemas (14 minutes)  ✅
+## 02 - DataFrames and Schemas
 
 - Create a DataFrame with a DDL schema string
 - Preview with `show()`
@@ -24,7 +22,7 @@ The notebooks are self-contained so they also work as later reference material.
 - DataFrame immutability
 - **Exercise:** build a renamed product-price projection
 
-## 03 - Filtering and Creating Columns (20 minutes) ✅
+## 03 - Filtering and Creating Columns
 
 - `F.col` and `F.lit`
 - `filter`, `isin`, and parenthesised boolean expressions
@@ -34,7 +32,7 @@ The notebooks are self-contained so they also work as later reference material.
 - `select`, `withColumnRenamed`, `drop`, and `orderBy`
 - **Exercise:** create a sorted high-value order report
 
-## 04 - Data Types, Casting, and Bad Records (16 minutes) ✅
+## 04 - Data Types, Casting, and Bad Records
 
 - Common scalar Spark types (i.e. one atomic value)
 - `cast` for trusted input
@@ -43,7 +41,7 @@ The notebooks are self-contained so they also work as later reference material.
 - Schema-on-read versus cleanup after read
 - **Exercise:** type and validate a raw product extract
 
-## 05 - Missing and Duplicate Data (15 minutes) ✅
+## 05 - Missing and Duplicate Data
 
 - Null versus blank text
 - Basic text standardisation with `trim`
@@ -53,7 +51,7 @@ The notebooks are self-contained so they also work as later reference material.
 - A simple data-quality count
 - **Exercise:** build a repeatable customer-cleaning pipeline
 
-## 06 - Grouping and Aggregations (18 minutes)  ✅
+## 06 - Grouping and Aggregations
 
 - Input and output grain
 - `groupBy` and `agg`
@@ -63,7 +61,7 @@ The notebooks are self-contained so they also work as later reference material.
 - Temporary views and an equivalent Spark SQL query
 - **Exercise:** create a category performance summary
 
-## 07 - Joining and Combining DataFrames (22 minutes) ✅
+## 07 - Joining and Combining DataFrames
 
 - Inner and left joins
 - DataFrame aliases and qualified columns
@@ -73,7 +71,7 @@ The notebooks are self-contained so they also work as later reference material.
 - Append compatible rows with `unionByName`
 - **Exercise:** retain every order while assigning customers and account managers
 
-## 08 - Dates and Timestamps (15 minutes) ✅
+## 08 - Dates and Timestamps
 
 - Parse with explicit formats and `try_to_timestamp`
 - Detect invalid dates and timestamps
@@ -83,7 +81,7 @@ The notebooks are self-contained so they also work as later reference material.
 - Named time-zone conversion
 - **Exercise:** parse day-first delivery data and create calendar fields
 
-## 09 - Window Functions and Pipeline Recap (15 minutes)  ✅
+## 09 - Window Functions and Pipeline Recap
 
 - `Window.partitionBy` and `orderBy`
 - `row_number` within a business key
@@ -91,7 +89,7 @@ The notebooks are self-contained so they also work as later reference material.
 - End-to-end afternoon pipeline checklist
 - **Exercise:** choose the latest product price
 
-## 10 - Reading and Writing in Microsoft Fabric (20 minutes)
+## 10 - Reading and Writing in Microsoft Fabric
 
 - Attach a default Lakehouse
 - Use `Files/pyspark_training` paths
